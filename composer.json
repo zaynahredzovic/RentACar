@@ -1,0 +1,10 @@
+{
+    "name": "rentacar/app",
+    "description": "Rent a car MVC project with Ajax",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
