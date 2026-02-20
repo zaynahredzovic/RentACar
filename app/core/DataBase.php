@@ -5,7 +5,7 @@ namespace App\Core;
 use PDO;
 use PDOException;
 
-class DataBase{
+class Database{
     
     public static $conn;
 
