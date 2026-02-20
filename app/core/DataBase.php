@@ -19,4 +19,11 @@ class Database{
         }
     }
 
+    public static function getInstance(){
+        return new self();
+    }
+
+    public function newInstance(){
+        return new self();
+    }
 }
