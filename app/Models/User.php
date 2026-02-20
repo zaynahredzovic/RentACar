@@ -41,7 +41,7 @@ class User{
             return ["status" => "error", "message" => "Invalid credentials"];
         }
 
-        if(password_verify($password, $user['password'])){
+        if(password_verify($password, $user['pwd'])){
             return ["status" => "success", "message" => "Login successful","user" => $user];
         }
 
