@@ -390,3 +390,17 @@ input:valid:not(:placeholder-shown) {
     color: #666;
     font-size: 14px;
 }
+
+/* Errors */
+
+.error-text {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#fullName, #email, #password {
+    margin-bottom: 5px;
+}
