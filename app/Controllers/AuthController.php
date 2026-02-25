@@ -22,6 +22,11 @@ class AuthController {
 
         $userModel = new User();
 
+        if(!isset($_POST['fullName']) || !isset($_POST['email']) || !isset($_POST['password'])){
+            echo json_encode(['status' => 'error', 'message' => 'Fill in all the fields']);
+            return;
+        }
+
         $result = $userModel->register(
             $_POST['fullname'],
             $_POST['email'],
@@ -34,7 +39,15 @@ class AuthController {
     // LOGIN API
     public function loginPost() {
 
+    error_log("loginPost called");
+    error_log("POST data: " . print_r($_POST, true));
+
         header('Content-Type: application/json');
+
+        if(!isset($_POST['email']) || !isset($_POST['password'])){
+            echo json_encode(['status' => 'error', 'message' => 'Email and password required']);
+            return;
+        }
 
         $userModel = new User();
 
