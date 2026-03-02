@@ -5,7 +5,7 @@ namespace App\Core;
 use PDO;
 use PDOException;
 
-class DataBase{
+class Database {
     
     public static $conn;
 
@@ -17,6 +17,13 @@ class DataBase{
         } catch (PDOException $e) {
             die('Database connection error: ' . $e->getMessage());
         }
+    }
+
+    public static function getConnection() {
+        if (self::$conn === null) {
+            new self(); 
+        }
+        return self::$conn;
     }
 
 }

@@ -32,39 +32,24 @@ loginForm.addEventListener("submit", (e) => {
         return;
     }
 
-    //ajax request
-    $.ajax({
-        type: 'POST',
-        url: '/rentacar/api/login',
-        data: formData,
-        dataType: 'json',
-        success: (response) => {
-            if(response.status === 'success'){
-                responseMsg.className = 'success';
-                responseMsg.textContent = response.message;
-                
-                //clear form
-                loginForm.reset();
+    //custom success callback
+    const onSuccess = function(response, form) {
+        if(response.status === 'success'){
+            responseMsg.className = 'success';
+            responseMsg.textContent = response.message;
 
-                //redirect
-                setTimeout(() => {
-                    window.location.href = '/rentacar/dashboard';
-                }, 1000);
-            }else{
-                responseMsg.className = 'error';
-                responseMsg.textContent = response.message;
-            }
-        },
-        error: (obj, status, error) => {
-            console.log('Login error: ', error);
-            console.log('Response Tect: ', obj.responseText);
-            console.log('Status', obj.status);
+            //clear form
+            form.reset();
+
+            //redirect to dashboard
+            setTimeout(() => {
+                window.location.href = 'rentacar/dashboard';
+            }, 1000);
+        }else{
             responseMsg.className = 'error';
-            responseMsg.textContent = 'An error occured. Please try again.';
-        }, 
-        complete: () => {
-            loginBtn.textContent = originalText;
-            loginBtn.disabled = false;
+            responseMsg.textContent = response.message;
         }
-    });
+    }
+
+    submitForm('loginForm', '/rentacar/api/login', 'POST', onSuccess);
 })

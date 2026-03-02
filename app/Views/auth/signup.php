@@ -23,7 +23,8 @@
 
     </div>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/signup.js"></script>
+    <script src="/rentacar/public/js/jquery.min.js"></script>
+    <script src="/rentacar/public/js/form.js"></script>
+    <script src="/rentacar/public/js/signup.js"></script>
 </body>
 </html>
