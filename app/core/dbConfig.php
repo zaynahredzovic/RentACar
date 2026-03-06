@@ -12,7 +12,7 @@ final class dbConfig{
     public function __construct(){
         $this->driver = $_ENV['DB_DRIVER'];
         $this->host = $_ENV['DB_HOST'];
-        $this->database = $_ENV['DB_DATABASE'];
+        $this->database = $_ENV['DB_NAME'];
         $this->username = $_ENV['DB_USER'];
         $this->password = $_ENV['DB_PASSWORD'];
     }
