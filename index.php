@@ -36,6 +36,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(RouteCollector $r) {
     // Pages
     $r->addRoute('GET', '/', 'App\Controllers\AuthController@login');
     $r->addRoute('GET', '/signup', 'App\Controllers\AuthController@signup');
+    $r->addRoute('GET', '/logout', 'App\Controllers\AuthController@logout');
 
     // Dashboard (protected)
     $r->addRoute('GET', '/dashboard', 'App\Controllers\DashboardController@index');

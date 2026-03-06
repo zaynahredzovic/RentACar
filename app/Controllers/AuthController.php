@@ -60,4 +60,11 @@ class AuthController {
             "message" => $result['message']
         ]);
     }
+
+    public function logout() {
+    Session::destroy();
+    
+    header('Location: /rentacar/');
+    exit;
+}
 }
