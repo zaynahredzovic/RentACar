@@ -28,7 +28,6 @@
         <p>Already have an account? <a href="/rentacar/">Log In</a></p>
     </div>
 
-    <!-- Move scripts to the bottom, just before closing body tag -->
     <script src="/rentacar/public/js/jquery.min.js"></script>
     <script src="/rentacar/public/js/form.js?v=<?php echo time(); ?>"></script>
     <script src="/rentacar/public/js/signup.js?v=<?php echo time(); ?>"></script>
