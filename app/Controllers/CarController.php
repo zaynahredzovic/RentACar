@@ -101,7 +101,7 @@ class CarController{
         //prepare car data
         $carData = [
             'user_id' => $user['id'],
-            'category_id' => $_POST['categpory_id'],
+            'category_id' => $_POST['category_id'],
             'title' => $_POST['title'],
             'description' => $_POST['description'],
             'price_per_day' => $_POST['price_per_day'],
